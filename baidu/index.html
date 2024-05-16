@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=600,user-scalable=no" />
     <meta
       name="keywords"
-      content="不会百度么,你不会百度么,不会自己找嘛,到底咋整啊,大佬帮帮我啊,你到底会不会啊"
+      content="不会百度么,您不会百度么,不会自己找嘛,到底咋整啊,大佬帮帮我啊,您到底会不会啊"
     />
     <meta name="referrer" content="no-referrer" />
-    <title>不会百度么？</title>
+    <title>您自己不会百度么？</title>
     <style>
       body,
       html {
@@ -183,21 +183,21 @@
   </head>
   <body>
     <base target="_blank" />
-    <h1>不会百度么？</h1>
+    <h1>您不会自己百度么？</h1>
     <form id="search">
       <input
         name="text"
         type="search"
-        placeholder="输入关键字，回车搜索"
+        placeholder="输入关键字，按“Enter”键进行搜索"
         autocomplete="off"
       />
-      <button>百度一下</button>
+      <button>百度一下，您就知道</button>
     </form>
     <p id="tooltip">输入搜索关键字</p>
     <div id="mouse">
       <b> </b>
     </div>
-    <button id="stopBtn">停一停、停一停！我是自己人，我要生成链接</button>
+    <button id="stopBtn">停一停、停一停！我是自己人，我要生成链接！</button>
     <div id="output"></div>
   </body>
   <script>
@@ -289,7 +289,7 @@
             a(20, 20);
           var t = r.value.replace(/^\s+|\s+$/g, "");
           if (!t) return r.focus(), void f("请正确输入搜索关键词");
-          history.pushState({}, "不会百度么？", "");
+          history.pushState({}, "您不会不会百度么？", "");
           var o = `${location.origin}${location.pathname}?s=${n(t)}`;
           output.innerHTML = `<h3>生成链接</h3><p>通用地址：<a href="${o}">${o}</a></p>`;
         }),
