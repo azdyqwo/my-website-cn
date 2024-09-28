@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跳转链接</title>
+    <script>
+        // 解析 URL 参数
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        window.onload = function() {
+            // 从 URL 中获取 'link' 参数
+            var link = getUrlParameter('link');
+
+            // 检查是否有有效链接
+            if (link) {
+                // 显示等待信息
+                document.getElementById("status").innerText = "即将跳转至 " + link + "...";
+
+                // 设置 3 秒延迟后跳转
+                setTimeout(function() {
+                    // 跳转到传入的链接
+                    window.location.href = link;
+                }, 3000);
+            } else {
+                document.getElementById("status").innerText = "未提供有效链接！";
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+<script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+</head>
+<body>
+<center><mdui-circular-progress></mdui-circular-progress></center>
+    <h1 align=center>跳转中...</h1>
+    
+    <!-- 等待状态 -->
+    <p id="status"></p>
+</body>
+</html>
