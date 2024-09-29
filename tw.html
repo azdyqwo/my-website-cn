@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+<!--mdui-->
+<link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+<script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+<meta charset="UTF-8">
+<title>MeowcoQAQ (原 az_QAQ) 的個人網站</title>
+<meta name="keywords" content="azQAQ,az_QAQ,Website,Meowco" />
+<meta name="description" content="這裡是喵可的网站，您可以在此处查看我的简介" />
+<!-- MD icon Filled -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--chat -->
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+  />
+<!-- 适应移动端 UA -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+<!-- 字体 -->
+<style>
+  @font-face{
+      font-family: 'cef-fonts-cjk-regular';
+      src: url('https://azqaq.cat/static/CEFFontsCJK-Regular.ttf');
+  }
+  body{
+      font-family: "cef-fonts-cjk-regular";
+  }
+  input{
+      font-family: "cef-fonts-cjk-regular";
+  }
+  </style>
+  <style>
+  .aui-sam-img {
+  width: 185px;
+  height: 185px;
+  margin: auto;
+}
+  .aui-sam-img img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      border: none;
+      border-radius: 10px;
+      border-radius: 50%;
+  }
+</style>
+<style>
+    /* 默认样式：大屏设备 */
+.responsive-box-left {
+    width: 19.6%; /* 固定宽度 */
+    padding: 20px;
+    box-sizing: border-box; /* 确保 padding 不影响整体宽度 */
+}
+
+/* 当屏幕宽度小于 768px 时隐藏内容 */
+  @media only screen and (max-width: 768px) {
+      .hide-on-mobile {
+          width: 100%;
+          margin: 0; /* 移除左右边距，使其占满屏幕 *
+      }
+  }
+  </style>
+  <style>
+    /* 默认样式：大屏设备 */
+.responsive-box {
+    width: 78%; /* 固定宽度 */
+    padding: 20px;
+    box-sizing: border-box; /* 确保 padding 不影响整体宽度 */
+}
+
+/* 小屏设备样式：当屏幕宽度小于768px时 */
+@media only screen and (max-width: 768px) {
+    .responsive-box {
+        width: 100%; /* 设置为满屏宽度 */
+        height: 580px;
+        margin: 0; /* 移除左右边距，使其占满屏幕 */
+    }
+}
+
+  </style>
+  <!-- flexbox 换行-->
+  <style>
+    .specific-parts {
+        display: flex;
+        flex-wrap: wrap; /* 允许换行 */
+        justify-content: space-between; /* 元素平均分布 */
+    }
+    .right-frame-small {
+        text-align: center;
+        width: 28%; /* 每個元素占据 28% 的宽度 */
+        height: 190px;
+        margin-bottom: 10px; /* 增加下方间距，避免换行时元素重叠 */
+    }
+    
+    /* 小屏设备样式：当屏幕宽度小于768px时 */
+@media only screen and (max-width: 768px) {
+    .responsive-box-right-small {
+        display: flex;
+        flex-wrap: wrap; /* 允许换行 */
+        justify-content: space-between; /* 元素平均分布 */
+    }
+    .right-frame-small {
+        text-align: center;
+        width: 100%; /* 每個元素占据 28% 的宽度 */
+        height: 190px;
+        margin-bottom: 10px; /* 增加下方间距，避免换行时元素重叠 */
+    }
+}
+</style>
+
+<!-- 统一高度 -->
+<style>
+  .same-height {
+      height: 1380px; /* 设置元素的高度 */
+      /* 宽度可以由内容自动决定，也可以不设置 */
+  }
+</style>
+<!-- 在小屏设备上访问时高度是缩放的 -->
+<style>
+/* 针对小屏设备 */
+@media (max-width: 768px) {
+  .dynamic-height {
+    min-height: 100px; /* 设置一個最小高度 */
+    max-height: none;  /* 默认情况下没有最大高度，允许根据内容调整 */
+    height: auto;      /* 自动高度，根据内容多少调整 */
+    overflow-y: auto;  /* 如果内容过多，可以启用滚动条 */
+  }
+}
+</style>
+<!--同一行大屏-->
+<style>
+        .container {
+            display: flex;
+        }
+
+        .item-1-left {
+            flex: 0 0 28%;  /* 固定宽度为 28% */
+            background-color: lightwhite;
+            padding: 10px;
+        }
+
+        .item-2-right {
+            flex: 0 0 78.5%;  /* 固定宽度为 78.5% */
+            background-color: lightgray;
+            padding: 10px;
+            margin-left: auto;  /* 解决百分比不加起来等于100%的问题 */
+        }
+    </style>
+    <!--MDUI 主题色-->
+    <style>
+        :root {
+            --mdui-theme-primary: #ff5722; /* 自定义主要颜色 (例如橙色) */
+            --mdui-theme-accent: #4caf50;  /* 自定义强调色 (例如绿色) */
+        }
+    </style>
+    <style>
+        /* 禁用整個頁面的文字选择 */
+        body {
+            -webkit-user-select: none; /* 针对 Safari, Chrome */
+            -moz-user-select: none;    /* 针对 Firefox */
+            -ms-user-select: none;     /* 针对旧版 IE */
+            user-select: none;         /* 标准属性 */
+        }
+    </style>
+</head>
+
+<br><br><br><br>
+<div style="position: relative;overflow: hidden"></div>
+  <mdui-top-app-bar
+    scroll-behavior="elevate"
+    scroll-target=".example-scroll-behavior-elevate"
+  >
+     <!--menu-->
+    <mdui-top-app-bar-title scroll-behavior="elevate"
+    scroll-target=".example-scroll-behavior-elevate"
+ >喵可的個人主頁<mdui-icon name="catching_pokemon"></mdui-icon></mdui-top-app-bar-title>
+    <div style="flex-grow: 1"></div>
+    <mdui-dropdown>
+      <mdui-button-icon icon="language" slot="trigger"></mdui-button-icon>
+      <mdui-menu>
+        <mdui-menu-item href="/"><a>简体中文（中国大陆）</a></mdui-menu-item>
+        <mdui-menu-item href="#"><a>繁體中文（中國台灣）</a></mdui-menu-item>
+      </mdui-menu>
+    </mdui-dropdown>
+  </mdui-top-app-bar>
+
+<div class="mdui-img-circle aui-sam-img">
+  <img src="https://linux.do/user_avatar/linux.do/azqaq/144/130394_2.png" alt="頭像" height="50px">
+</div>
+
+<h1 align="center"><font size="11">您好！我是喵可。</font></h1>
+
+<p align="center"><font size="5"><s>おいでよつ ,柴又！</s> 還是音 MIDI 大佬</font></p>
+
+<img src=https://klpz.net/static/svg/snake-Light.svg width=100%></img>
+<!-- left -->
+<mdui-card variant="filled" class="parent-container same-height dynamic-height item-1-left responsive-box-left hide-on-mobile"> 
+  <br>
+  <center>
+    <mdui-card variant="elevated" clickable style="width: 85%" class="centered-box centered-box">
+<p>所在地: 中國-福建</p>
+</mdui-card>
+</center>
+<br>
+<center>
+  <mdui-card variant="elevated" clickable style="width: 85%" class="centered-box">
+    <br>
+    <mdui-chip>HTML</mdui-chip><mdui-chip>論壇</mdui-chip><mdui-chip>麥塊</mdui-chip><mdui-chip>蛋仔派對</mdui-chip><mdui-chip>甘城貓貓</mdui-chip><mdui-chip>貓羽雫</mdui-chip><mdui-chip>音MAD</mdui-chip><mdui-chip>MIDI</mdui-chip><mdui-chip>绝區零</mdui-chip><mdui-chip>原神</mdui-chip><mdui-chip>C（不是C語言/C++）</mdui-chip>
+    <br>
+    
+</mdui-card>
+</center>
+<br>
+<center>
+<mdui-card variant="elevated" clickable style="width: 85%" class="centered-box centered-box">
+<div class="example-scroll-target" style="height: 222px;overflow: auto;">
+      <div style="height: 100%">
+        <br>
+        <li>2024-09-20 </li>
+        <p>Github 被关注数達到2</p>
+        <li>2024-09-13 </li>
+        <p>注冊 mcneko.com</p>
+        <li>2024-07-01 </li>
+        <p>初中畢業</p>
+        <li>2024-03-?? </li>
+        <p>注冊 azqaq.cat、azqaq.cn</p>
+        <li>2024-03-01 </li>
+        <p>學会自己製作音MAD</p>
+        <li>2024-01-02 </li>
+        <p>注冊 azqaq.top，真正意義上的個人主頁首次建成</p>
+        <li>2023-10-?? </li>
+        <p>注冊域名 ikunmc.com</p>
+        <li>2023-09-01 </li>
+        <p>第二個論壇建成，域名 mc.爱坤.cn</p>
+        <li>2023-08-01 </li>
+        <p>第一個論壇因伺服器原因，已關閉</p>
+        <li>2023-02-?? </li>
+        <p>第一個論壇更换域名为 ikunbbs.top</p>
+        <li>2022-12-?? </li>
+        <p>第一個論壇建成，使用免費域名 luntan.树枝666.tk</p>
+        <br>
+      </div>
+    </div>
+  </mdui-card>
+</center>
+<br>
+<center>
+  <mdui-card variant="elevated" clickable style="width: 85%" class="centered-box centered-box">
+    <p align="center">UI by <a href="https://mdui.org" rel="nofollow" target="_blank">MDUI</a></p>
+    </mdui-card>
+    <br><br>
+</center>
+</mdui-card>
+
+<mdui-card variant="filled" class="dynamic-height responsive-box same-height item-2-right">
+<br>
+<h1><mdui-icon name="settings-applications"></mdui-icon> 正在維護的項目</h1>
+<div class="specific-parts">
+  <div class="right-frame-small"><mdui-card variant="elevated" clickable style="width: 99%;height: 182px" href="https://www.mcneko.com"><img src=https://www.mcneko.com/favicon.ico width="80" height="80" alt="Forum"></img><h3>MCNeko</h3><h6>嗯…</h6></mdui-card></div>
+  <div class="right-frame-small"><mdui-card variant="elevated" clickable style="width: 99%;height: 182px" href="https://blog.mcneko.com"><img src=https://blog.mcneko.com/wp-content/uploads/2024/07/cropped-openaiassets_676d2e034bcb92cbea60e4faf5fd7985_2579861715703792700-1-192x192.png  width="80" height="80" alt="Blog"></img><h3>Blog</h3><h6>分享內容與瑣事</h6></mdui-card></div>
+  <div class="right-frame-small"><mdui-card variant="elevated" clickable style="width: 99%;height: 182px" href="#"><font size="11"><mdui-icon name="home"></mdui-icon></font><h3>主頁</h3><h6>現在就在這裡</h6></mdui-card></div>
+  <div class="right-frame-small"><mdui-card variant="elevated" clickable style="width: 99%;height: 182px" href="https://3dtotem.mcneko.com"><img src=https://3dtotem.mcneko.com/favicon.ico width="80" height="80" alt="3dtotem"></img><h3>圖騰生成</h3><h6>翻譯也算？</h6></mdui-card></div>
+  </div>
+  <mdui-divider></mdui-divider>
+<h1><mdui-icon name="favorite"></mdui-icon> 我的喜歡</h1>
+<div class="specific-parts">
+  <div class="right-frame-small"><mdui-card variant="elevated" clickable style="width: 99%;height: 182px" href="https://shibamata.fun" target="_blank" rel="nofollow"><img src=https://cdn.jsdmirror.com/gh/azdyqwo/my-website-cn%40main/static/img/sbmt-1-1.jpg width="80" height="80" alt="shibamata"></img><h3>柴又</h3><h6>又柴又老</h6></mdui-card></div>
+  <div class="right-frame-small"><mdui-card variant="elevated" clickable style="width: 99%;height: 182px"><img src=https://klpz.net/static/img/logo.png width="80" height="80" alt="Nacho"></img><h3>甘城</h3><h6>最可爱的貓貓！</h6></mdui-card></div>
+  <div class="right-frame-small"><mdui-card variant="elevated" clickable style="width: 99%;height: 182px" href="https://minecraft.net" target="_blank" rel="nofollow"><img src=https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/favicon.ico width="80" height="80" alt="Minecraft"></img><h3>麥塊</h3><h6>是方塊人（？）</h6></mdui-card></div>
+    <div class="right-frame-small"><mdui-card variant="elevated" clickable style="width: 99%;height: 182px" href="https://otm.ink" target="_blank" rel="nofollow"><img src=https://cdn.jsdmirror.com/gh/azdyqwo/my-website-cn%40main/static/img/af894e47b0497f7e38457362d1489857559ad980.jpg@1c.webp width="80" height="80" alt="otoink"></img><h3>音之墨</h3><h6>早上晚音之墨，現在我有個人主頁</h6></mdui-card></div>
+  </div>
+  <mdui-divider></mdui-divider>
+  <h1><mdui-icon name="architecture"></mdui-icon> 我擅長的
+    <div class="right-frame-small"><mdui-card variant="elevated" clickable style="width: 99%;height: 182px" href="https://otomad.wiki" target="_blank" rel="nofollow"><h3>做音MAD</h3><h9>音罵</h9></mdui-card></div>
+    <br>
+    </mdui-divider>
+    <p align=center>
+    <font size=3>
+    <div style="display: flex; flex-direction: column;">
+<mdui-card variant="outlined" style="width: 100%;height: 54px">
+<p align="center">© Copyright <a href="https://azqaq.top">Meowco</a> 2024-<script type="text/javascript">document.write((new Date()).getFullYear());</script></p></p>
+</font>
+</mdui-card>
+</div>
+</div>
