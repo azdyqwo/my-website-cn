@@ -165,6 +165,23 @@
             user-select: none;         /* 标准属性 */
         }
     </style>
+    <!-- 用于签名档 -->
+    <style>
+        /* 默认宽度为 95%（小屏设备） */
+        .profile-image-a img {
+            width: 95%;
+            height: auto;  /* 保持图片的宽高比 */
+            display: block; /* 去掉图片底部的空白 */
+            margin: 0 auto; /* 居中 */
+        }
+
+        /* 当屏幕宽度大于等于 768px 时，宽度改为 70% */
+        @media (min-width: 768px) {
+            .profile-image-a img {
+                width: 70%;
+            }
+        }
+    </style>
 </head>
 
 <br><br><br><br>
@@ -196,7 +213,8 @@
 
 <p align="center"><font size="5"><s>おいでよつ ,柴又！</s> 還是音 MIDI 大佬</font></p>
 
-<img src=https://klpz.net/static/svg/snake-Light.svg width=100%></img>
+<p class="profile-image-a"><img src=https://klpz.net/static/svg/snake-Light.svg width=100%></p>
+<p class="profile-image-a"><img src=https://www.mcneko.com/s/i alt="签名档计数器"></p>
 <!-- left -->
 <mdui-card variant="filled" class="parent-container same-height dynamic-height item-1-left responsive-box-left hide-on-mobile"> 
   <br>
